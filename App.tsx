@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Routes } from './src/routes';
 import { useFonts, Inter_400Regular, Inter_600SemiBold, Inter_700Bold, Inter_800ExtraBold } from '@expo-google-fonts/inter';
+import { SQLiteProvider } from './src/contexts/SQlite';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,9 +19,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <SQLiteProvider>
       <Routes />
-      <StatusBar style="light" translucent backgroundColor='transparent' />
-    </>
+      <StatusBar style="auto" translucent backgroundColor='transparent' />
+    </SQLiteProvider>
   );
 }
