@@ -4,12 +4,13 @@ import { HomeHeader } from "../../components/headers/home";
 import { AddTab } from "../../components/button/addBtn";
 import SQLiteContext from "../../contexts/SQlite";
 import { NoteView } from "../../components/views/Note";
+import { BackGround } from "../../components/views/Background";
 
 
 export function HomeScreen() {
     const { notes } = useContext(SQLiteContext)
     return (
-        <View className="flex-1 pt-8 bg-background dark:bg-darkBackground " >
+        <BackGround>
             <HomeHeader />
             <AddTab />
 
@@ -20,6 +21,6 @@ export function HomeScreen() {
                 renderItem={({ item }) => { return <NoteView title={item.title} note={item.note} id={item.id} /> }}
             />
 
-        </View>
+        </BackGround>
     )
 }

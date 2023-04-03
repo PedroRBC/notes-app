@@ -5,6 +5,7 @@ import { Input } from "../../components/inputs/Input";
 import { SendBtn } from "../../components/button/sendBtn";
 import SQLiteContext from "../../contexts/SQlite";
 import { useNavigation } from "@react-navigation/native";
+import { BackGround } from "../../components/views/Background";
 
 
 export function CreateScreen() {
@@ -20,7 +21,7 @@ export function CreateScreen() {
     }
 
     return (
-        <View className="flex-1 pt-8 bg-background dark:bg-darkBackground " >
+        <BackGround>
             <ReturnHeader />
 
             <View className="flex-1 pl-4 pr-2 pt-3" >
@@ -42,6 +43,6 @@ export function CreateScreen() {
 
             </View>
 
-        </View>
+        </BackGround>
     )
 }

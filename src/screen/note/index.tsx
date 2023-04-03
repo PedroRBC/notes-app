@@ -2,7 +2,8 @@ import { useContext } from "react"
 import { View, Text } from "react-native";
 import { ReturnHeader } from "../../components/headers/return";
 import { useRoute } from "@react-navigation/native";
-import SQLiteContext, { Note } from "../../contexts/SQlite";
+import SQLiteContext from "../../contexts/SQlite";
+import { BackGround } from "../../components/views/Background";
 
 
 export function NoteScreen() {
@@ -11,7 +12,7 @@ export function NoteScreen() {
     const [note] = notes.filter(i => i.id == params)
 
     return (
-        <View className="flex-1 pt-8 bg-background dark:bg-darkBackground " >
+        <BackGround>
             <ReturnHeader note={note} />
 
             <View className="px-3 pt-2" >
@@ -20,6 +21,6 @@ export function NoteScreen() {
                 <Text className="text-xl dark:text-DarkFont " > {note.note} </Text>
             </View>
 
-        </View>
+        </BackGround>
     )
 }
